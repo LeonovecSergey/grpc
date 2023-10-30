@@ -1,0 +1,21 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+
+package com.learn.stubs.message;
+
+option java_package = "com.learn.stubs.message";
+option java_multiple_files = true;
+
+service MessageService{
+  rpc getMessage(MessageRequest) returns (MessageResponse);
+}
+
+message MessageRequest{
+  string value = 1;
+  google.protobuf.Timestamp timestamp = 2;
+}
+
+message MessageResponse{
+  string value = 1;
+  google.protobuf.Timestamp timestamp = 2;
+}
